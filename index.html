@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>\
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+      h1{
+    background-color: black;
+    color: white;
+    width: 360px;
+    border: 2px dotted white;
+
+}
+#heading{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+
+}
+.container{
+    background-color: rgb(2, 2, 2);
+    border: 2px solid black;
+    height: 580px;
+    width: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body{
+    background-color: rgb(235, 233, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+#btn{
+    /* border: 2px solid red;   */
+}
+.button{
+    height: 60px;
+    width: 70px;
+    color: white;
+    background-color: black;
+    border: 2px solid rgb(167, 182, 121);
+    margin: 2px;
+    box-shadow: 0px 0px 5px white ;
+    text-shadow: 0px 0px 10px white;
+    font-size:25px;
+}
+#text{
+    color: white;
+    background-color: rgb(21, 7, 7);
+    height: 70px;
+    width: 300px;
+    border: 3px solid white;
+    margin: 10px;
+    font-size: 30px;
+}
+#img{
+    height: 25px;
+
+}
+    </style>
+</head>
+<body>
+  <div id="main" class="container">
+         <h1 id="heading">CALCULATOR</h1>
+       <div id="header">
+        <input type="text" id="text" placeholder=" Enter Here">
+       </div>
+
+       <div id="btn">
+        <button class="button" onclick="back()">⌫</button>
+        <button class="button" onclick="add('()')" >()</button>
+        <button class="button" onclick="add('%')">%</button>
+        <button class="button" onclick="closed()">C</button>
+        <br>
+        <button class="button" onclick="add(7)" >7</button>
+        <button class="button" onclick="add(8)">8</button>
+        <button class="button" onclick="add(9)">9</button>
+        <button class="button" onclick="add('/')">/</button>
+        <br>
+        <button class="button" onclick="add(4)">4</button>
+        <button class="button" onclick="add(5)">5</button>
+        <button class="button" onclick="add(6)">6</button>
+        <button class="button" onclick="add('*')">*</button>
+        <br>
+        <button class="button" onclick="add(1)">1</button>
+        <button class="button" onclick="add(2)">2</button>
+        <button class="button" onclick="add(3)">3</button>
+        <button class="button" onclick="add('-')">-</button>
+        <br>
+        <button class="button" onclick="add(0)">0</button>
+        <button class="button" onclick="add('.')">.</button>
+        <button class="button" onclick="equal()">=</button>
+        <button class="button" onclick="add('+')">+</button>
+       </div>
+ </div>
+    <script>
+        let res=document.getElementById("text");
+        function add(v){
+          res.value+=v;
+        }
+      function equal(){
+        res.value=eval(res.value);
+      }
+         function closed(){
+          res.value='';
+         }
+         function back(){
+          res.value=res.value.substr(0,res.value.length-1);
+         }
+    </script>
+</body>
+</html>
